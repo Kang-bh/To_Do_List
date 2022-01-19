@@ -23,7 +23,7 @@ mongoose.connect('mongodb+srv://KBH:skoo1293@todolist.h7at6.mongodb.net/myFirstD
 
 
 app.get('/', (req, res) => {
-  res.send('Hello World!')
+  res.send('Hello World!, BYE!')
 })
 
 app.post('/register', (req, res) => {
