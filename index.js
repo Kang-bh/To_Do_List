@@ -4,7 +4,9 @@ const port = 3000
 const bodyParser = require('body-parser')
 const mongoose = require('mongoose')
 
-const {User} = require("./models/user")
+const config = require('./config/key');
+
+const {User} = require("./models/user");
 
 // application/x-www-form-urlencoded 형태 데이터 분석
 app.use(bodyParser.urlencoded({extended: true}));
@@ -12,7 +14,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 
 
-mongoose.connect('mongodb+srv://KBH:skoo1293@todolist.h7at6.mongodb.net/myFirstDatabase?retryWrites=true&w=majority')
+mongoose.connect(config.mongoURI)
 // MongoDB PW 특수문자 X
 // 6.0 이상 부터는 기본적용  
 //useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true, useFindAndModify: false
