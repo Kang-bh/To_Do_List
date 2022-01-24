@@ -3,7 +3,6 @@ import {
   BrowserRouter,
   Routes,
   Route,
-  Link,
 } from "react-router-dom";
 import LandingPage from './components/views/LandingPage/LandingPage';
 import LoginPage from './components/views/LoginPage/LoginPage';
@@ -24,8 +23,8 @@ function App(props) {
       */}
       <Routes>
         <Route exact path="/" element = {<LandingPage/>}/>
-        <Route exact path="/LoginPage" element = {<LoginPage />} />
-        <Route exact path="/RegisterPage" element = {<RegisterPage />} />
+        <Route exact path="/login" element = {<LoginPage />} />
+        <Route exact path="/register" element = {<RegisterPage />} />
       </Routes>
     </div>
   </BrowserRouter>

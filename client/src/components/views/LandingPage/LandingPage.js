@@ -1,6 +1,13 @@
-import React from 'react';
+import React, {useEffect} from 'react';
+import axios from 'axios';
 
-const LandingPage = () => {
+function LandingPage() {
+    
+    useEffect(() => {
+        axios.get('/api/hello') // get request를 server 로 보낸다.
+        .then(response => console.log(response))
+    }, [])
+
     return (
         <div>
             LandingPage
