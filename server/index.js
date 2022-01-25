@@ -54,7 +54,7 @@ app.post('/api/users/login', (req, res)=>{
   User.findOne({ email: req.body.email }, (err, user)=> {
     if(!user){
       return res.json({
-        loginSucess: 'false',
+        loginSuccess: 'false',
         message: "제공된 이메일에 해당하는 유저가 없습니다."
       })
     }
@@ -70,7 +70,7 @@ app.post('/api/users/login', (req, res)=>{
         // 토큰 저장 세션? 쿠키? 로컬? 어디에 저장할지 논의!! 중요. 장단점찾아서
         res.cookie("x_auth", user.token)
           .status(200)
-          .json({ loginSucess: true, userId: user._id })
+          .json({ loginSuccess: true, userId: user._id })
 
       })
     })

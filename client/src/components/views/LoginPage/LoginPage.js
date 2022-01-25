@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
-import { Axios } from 'axios';
 import { useDispatch } from 'react-redux';
 import { loginUser } from '../../../_actions/user_action';
+import { useNavigate } from 'react-router-dom';
 
 const LoginPage = (props) => {
     
     const dispatch = useDispatch();
+    const navigate = useNavigate();
     // state 생성
     const [Email, setEmail] = useState("");
     const [Password, setPassword] = useState("");
@@ -27,8 +28,9 @@ const LoginPage = (props) => {
 
         dispatch(loginUser(body)) // loginUser 라는 ACTION
             .then(response => {
+                console.log(response.payload.loginSuccess)
                 if(response.payload.loginSuccess){
-                    props.history.push('/')
+                    navigate('/')
                 } else{
                     alert('Error')
                 }
